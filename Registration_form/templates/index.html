@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <div class="theme-switch">
+          <label class="switch" title="Toggle dark mode">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+          </label>
+    </div>
+
+        <form id="user-form" method="POST" action="/submit">
+            <fieldset>
+                <legend>Student Information</legend>
+                <div class="form-group">
+                    <label for="name">ID Number</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your ID Number" required>
+                    <span class="placeholder-text">e.g., Y001</span>
+                </div>
+                <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+                    <span class="placeholder-text">e.g., Yash </span>
+                </div>
+                <div class="form-group">
+                    <label for="name">Last Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your Last name" required>
+                    <span class="placeholder-text">e.g., Kumar </span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span class="error-message" id="email-error">Please enter a valid email address.</span>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    <span class="password-strength" id="password-strength">Weak</span>
+                </div> -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your 10 Digits Phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="gender-group">
+                        <label><input type="radio" name="gender" value="male"> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <div class="form-group">
+                        <label for="city">Select Your City:</label>
+                        <select id="city" name="city" required>
+                            <option value="select">Select</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Delhi(NCR)">Delhi(NCR)</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Uttarkhand">Uttarkhand</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Ladakh">Ladakh</option>
+                            <option value="Bihar">Bihar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Accept the Terms and Conditions</label>
+                </div>
+                </fieldset>
+
+                <div class="button-group">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+            </fieldset>
+        </form>
+        <footer>
+            <p>© Created by Happy</p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
