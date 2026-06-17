@@ -8,7 +8,7 @@ app.secret_key = 'your_secret_key'
 db_config = {
     'host': 'localhost',  # Your MySQL host (localhost if MySQL is on the same machine)
     'user': 'root',  # Your MySQL username
-    'password': 'yash@2002',  # Your MySQL password
+    'password': 'your_password',  # Your MySQL password
     'database': 'student_info'  # The database you're using
 }
 
